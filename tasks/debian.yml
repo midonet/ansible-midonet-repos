@@ -1,9 +1,9 @@
 ---
 
-- name: Add Midokura repos (public)
+- name: Add Midokura repos
   template: src=midokura.list.j2 dest=/etc/apt/sources.list.d/midokura.list
 
-- name: Add Midokura repos key (public)
+- name: Add Midokura repos key
   apt_key: url=http://repo.midonet.org/packages.midokura.key
   retries: 3
 
