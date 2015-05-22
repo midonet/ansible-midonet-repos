@@ -28,7 +28,8 @@ Example Playbook
 
     - hosts: server
       roles:
-         - { role: abelboldu.ansible-repos, midonet_version: 2015.03 }
+         - role: abelboldu.ansible-repos
+		   midonet_version: 2015.03
 
 License
 -------
