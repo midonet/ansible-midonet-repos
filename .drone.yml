@@ -1,0 +1,13 @@
+image: ubuntu14
+env:
+
+script:
+  - pip install ansible
+
+  - printf '[defaults]\nroles_path = ../' > ansible.cfg
+
+  - lsb_release -a
+
+  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+
+  - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
