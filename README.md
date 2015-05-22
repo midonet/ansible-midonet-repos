@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/midonet/ansible-midonet-repos.svg?branch=master)](https://travis-ci.org/midonet/ansible-midonet-repos)
+[![Build Status](https://drone.io/github.com/midonet/ansible-midonet-repos/status.png)](https://drone.io/github.com/midonet/ansible-midonet-repos/latest)
 
 Role Name
 =========
