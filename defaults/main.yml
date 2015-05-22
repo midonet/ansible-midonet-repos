@@ -1,2 +1,8 @@
 ---
-# defaults file for midonet-repo
+
+midonet_version   : current
+midonet_release   : stable
+openstack_version : juno
+plugin_release    : stable
+
+
