@@ -7,23 +7,28 @@ Installation
 ------------
 
 This role requires at least Ansible v1.6
-    ansible-galaxy install abelboldu.ansible-midonet-repos
+
+    ansible-galaxy install abelboldu.midonet-repos
 
 Role Variables
 --------------
 
 Default variables:
 
+    --
+
+    midonet_version   : current
+    midonet_release   : stable
+    openstack_version : juno
+    plugin_release    : stable
 
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
+    - hosts: server
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: abelboldu.ansible-repos, midonet_version: 2015.03 }
 
 License
 -------
