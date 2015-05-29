@@ -23,7 +23,7 @@ build:
     - script:
         name: setup
         code: |
-          yum install epel-release -y
+          yum install epel-release sudo -y
           yum install python-pip python-devel gcc -y
           pip install ansible
           free -m
