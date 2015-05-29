@@ -38,8 +38,14 @@ build:
            cd ..
            mv source ansible-midonet-repos
            cd ansible-midonet-repos
+
+           # launch playbooks
            ansible-playbook -i tests/inventory tests/test.yml --syntax-check
            ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
+           # restore tree
+           cd .. && mv ansible-midonet-repos source
+           cd source
+
 
     
 
