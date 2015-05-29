@@ -34,9 +34,9 @@ build:
          code: |
            echo "[defaults]" > ansible.cfg
            echo "roles_path = ../" >> ansible.cfg 
-           cat ansible.cfg
-           ls 
-           ls ../
+           cd ..
+           mv source ansible-midonet-repos
+           cd ansible-midonet-repos
            ansible-playbook -i tests/inventory tests/test.yml --syntax-check
            ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
 
