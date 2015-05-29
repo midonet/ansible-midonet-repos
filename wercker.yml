@@ -26,6 +26,7 @@ build:
           yum install epel-release sudo -y
           yum install python-pip python-devel gcc -y
           pip install ansible
+          sudo sed -i 's/requiretty/!requiretty/g' /etc/sudoers
           free -m
           lscpu
 
