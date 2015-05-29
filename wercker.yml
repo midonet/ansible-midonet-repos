@@ -26,12 +26,17 @@ build:
           yum install epel-release -y
           yum install python-pip python-devel gcc -y
           pip install ansible
+          free -m
+          lscpu
 
     - script:
          name: deploy
          code: |
            echo "[defaults]" > ansible.cfg
            echo "roles_path = ../" >> ansible.cfg 
+           cat ansible.cfg
+           ls 
+           ls ../
            ansible-playbook -i tests/inventory tests/test.yml --syntax-check
            ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
 
