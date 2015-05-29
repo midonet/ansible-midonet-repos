@@ -24,5 +24,16 @@ build:
         name: setup
         code: |
           yum install epel-release -y
-          yum install ansible -y
+          yum install python-pip python-devel -y
+          pip install ansible
+
+    - script:
+         name: deploy
+         code: |
+           echo "[defaults]" > ansible.cfg
+           echo "roles_path = ../" >> ansible.cfg 
+           ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+           ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
+
+    
 
