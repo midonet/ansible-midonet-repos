@@ -1,6 +1,8 @@
 ---
 language: python
 python: "2.7"
+sudo: required
+dist: trusty
 
 before_install:
   # Make sure everything's up to date.
@@ -12,7 +14,7 @@ install:
 
   # Add ansible.cfg to pick up roles path.
   - echo "[defaults]" > ansible.cfg
-  - echo "roles_path = ../" >> ansible.cfg 
+  - echo "roles_path = ../" >> ansible.cfg
 
 script:
   # Check syntax
@@ -22,11 +24,15 @@ script:
   - "ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo"
 
   # Idempotency
-  - > 
-    ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo | grep -q 'changed=0.*failed=0' 
+  - >
+    ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
-    || (echo 'Idempotence test: fail' && exit 1) 
-  
-  # Install some package
+    || (echo 'Idempotence test: fail' && exit 1)
+
+  # Check distro
+  - sudo lsb_release -a
+  # Install some packages
   - sudo apt-get update -qq
+  - sudo apt-cache madison quagga
+  - sudo apt-get install -y quagga
   - sudo apt-get install -y midolman

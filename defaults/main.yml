@@ -1,8 +1,7 @@
 ---
 
-midonet_version   : 2015.03
-midonet_release   : stable
-openstack_version : juno
-plugin_release    : stable
-
-
+midonet_base_url  : "http://builds.midonet.org"
+midonet_version   : "current"
+midonet_release   : "stable"
+openstack_version : "liberty"
+plugin_release    : "stable"
