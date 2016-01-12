@@ -1,5 +1,6 @@
 ---
 
 - name: Add Midokura repos
-  template: src=midokura.repo.j2 dest=/etc/yum.repos.d/midokura.repo
-
+  template:
+    src: midokura.repo.j2
+    dest: /etc/yum.repos.d/midokura.repo

@@ -34,7 +34,7 @@ build:
          name: deploy
          code: |
            echo "[defaults]" > ansible.cfg
-           echo "roles_path = ../" >> ansible.cfg 
+           echo "roles_path = ../" >> ansible.cfg
            cd ..
            mv source ansible-midonet-repos
            cd ansible-midonet-repos
@@ -45,7 +45,4 @@ build:
            # restore tree
            cd .. && mv ansible-midonet-repos source
            cd source
-
-
-    
-
+           yum install -y midolman
